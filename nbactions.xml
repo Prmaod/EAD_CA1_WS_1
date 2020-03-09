@@ -9,8 +9,5 @@
                 <goal>clean</goal>
                 <goal>install</goal>
             </goals>
-            <properties>
-                <swarm.hollow>true</swarm.hollow>
-            </properties>
         </action>
     </actions>

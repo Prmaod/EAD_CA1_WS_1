@@ -15,15 +15,16 @@
         <version.mongodb>3.10.1</version.mongodb>
         <version.json.api>1.0</version.json.api>
         <version.spring.core>5.1.5.RELEASE</version.spring.core>
-        <version.wildfly.swarm>2018.3.3</version.wildfly.swarm>
+        <version.io.thorntail>2.6.0.Final</version.io.thorntail>
     </properties>
     
+   
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.wildfly.swarm</groupId>
+                <groupId>io.thorntail</groupId>
                 <artifactId>bom-all</artifactId>
-                <version>${version.wildfly.swarm}</version>
+                <version>${version.io.thorntail}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -80,11 +81,15 @@
             <artifactId>spring-core</artifactId>
             <version>${version.spring.core}</version>
         </dependency>
+        
+       
         <dependency>
-          <groupId>org.wildfly.swarm</groupId>
+          <groupId>io.thorntail</groupId>
           <artifactId>jaxrs</artifactId>
-          <version>${version.wildfly.swarm}</version>
-        </dependency>                                
+          <version>${version.io.thorntail}</version>
+        </dependency>  
+                    
+                                  
     </dependencies>
 
     <build>
@@ -134,25 +139,23 @@
                     </execution>
                 </executions>
             </plugin>
+            
+           
             <plugin>
-               <groupId>org.wildfly.swarm</groupId>
-               <artifactId>wildfly-swarm-plugin</artifactId>
-               <version>${version.wildfly.swarm}</version>
+               <groupId>io.thorntail</groupId>
+               <artifactId>thorntail-maven-plugin</artifactId>
+               <version>${version.io.thorntail}</version>
                <configuration>
-		    <!--
-			Uncomment out to have hollow jar created -->
-                    <hollow>true</hollow>
-                 <!--   <properties>
-                        <swarm.bind.address>127.0.0.1</swarm.bind.address>
-                        <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
-                    </properties> -->
+                    <hollow>true</hollow>                                  
                </configuration>               
                <executions>
                  <execution>
                    <goals><goal>package</goal></goals>
                  </execution>
                </executions>
-             </plugin>             
+             </plugin>  
+                  
+                    
         </plugins>
     </build>
 </project>

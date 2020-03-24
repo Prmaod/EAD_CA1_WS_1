@@ -13,6 +13,15 @@ steps:
 - task: HelmInstaller@1
   inputs:
     helmVersionToInstall: 'latest'
+  
+- task: HelmDeploy@0
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureSubscription: 'Pay-As-You-Go(1)(7fb8e137-cf36-47e9-a0de-a49cfd5ced2c)'
+    azureResourceGroup: 'knolangroup'
+    kubernetesCluster: 'knolanAKSCluster'
+    useClusterAdmin: true
+    command: 'init'
 
 - task: HelmDeploy@0
   inputs:

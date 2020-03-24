@@ -23,6 +23,15 @@ steps:
     useClusterAdmin: true
     command: 'init'
 
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceEndpoint: 'knolanAKSCluser'
+    command: 'create'
+    arguments: 'serviceaccount --namespace kube-system tiller'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
+
 - task: HelmDeploy@0
   inputs:
     connectionType: 'Azure Resource Manager'

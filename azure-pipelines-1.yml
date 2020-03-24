@@ -22,7 +22,7 @@ steps:
     kubernetesCluster: 'knolanAKSCluster'
     useClusterAdmin: true
     command: 'repo'
-    arguments: 'add stable https://kubernetes -charts.storage.googleapis.com/'
+    arguments: 'add stable https://kubernetes-charts.storage.googleapis.com/'
 
 - task: HelmDeploy@0
   inputs:

@@ -17,7 +17,7 @@ spec:
       # pod contains 1 container
       containers:
       - name: bp
-        image: knolanacr.azurecr.io/bprestws-fat:latest 
+        image: pramacr.azurecr.io/bprestws-fat:latest 
         # container opens port 8080
         ports:
         - containerPort: 8080

@@ -1,4 +1,4 @@
-FROM knolanacr.azurecr.io/bprestws-hollow:latest
+FROM pramacr.azurecr.io/bprestws-hollow:latest
 
 EXPOSE 8080
 

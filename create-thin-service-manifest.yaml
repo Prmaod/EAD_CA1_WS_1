@@ -31,7 +31,6 @@ spec:
       # Not the overall length of the deployment! Anytime the deployment creates or deletes a Pod
       progressDeadlineSeconds: 600    
       # pod contains 1 container
-      # pod contains 1 container
       containers:
       - name: bp
         image: pramacr.azurecr.io/bprestws-thinwar:latest
@@ -43,14 +42,14 @@ spec:
           timeoutSeconds: 5
           periodSeconds: 180
           failureThreshold: 3
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 8080
-          periodSeconds: 100
-          initialDelaySeconds: 180
-          failureThreshold: 3
-          successThreshold: 1
+     #  readinessProbe:
+     #    httpGet:
+     #      path: /ready
+     #       port: 8080
+     #     periodSeconds: 100
+     #     initialDelaySeconds: 180
+     #     failureThreshold: 3
+     #     successThreshold: 1
       #commented belwow section due to memory shortage on node
       #resources:
       #requests:  #request a Pod with  a minimum of 0.5 of a core and 128 MB of memory

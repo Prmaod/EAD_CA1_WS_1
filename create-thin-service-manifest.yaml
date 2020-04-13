@@ -48,7 +48,7 @@ spec:
             path: /ready
             port: 8080
           periodDeconds: 2
-          initialDelaySeconds: 0
+          initialDelaySeconds: 10
           failureThreshold: 3
           successThreshold: 1
       #commented belwow section due to memory shortage on node

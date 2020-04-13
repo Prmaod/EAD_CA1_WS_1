@@ -38,7 +38,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /healthy
-            port: 22137
+            port: 8080
           initialDelaySeconds: 10
           timeoutSeconds: 1
           periodSeconds: 10
@@ -46,7 +46,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /ready
-            port: 22137
+            port: 8080
           periodDeconds: 2
           initialDelaySeconds: 0
           failureThreshold: 3

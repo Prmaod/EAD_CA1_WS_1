@@ -39,16 +39,16 @@ spec:
           httpGet:
             path: /healthy
             port: 8080
-          initialDelaySeconds: 10
-          timeoutSeconds: 1
-          periodSeconds: 10
+          initialDelaySeconds: 180
+          timeoutSeconds: 5
+          periodSeconds: 180
           failureThreshold: 3
         readinessProbe:
           httpGet:
             path: /ready
             port: 8080
-          periodDeconds: 2
-          initialDelaySeconds: 10
+          periodSeconds: 100
+          initialDelaySeconds: 180
           failureThreshold: 3
           successThreshold: 1
       #commented belwow section due to memory shortage on node

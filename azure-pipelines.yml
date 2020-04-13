@@ -51,4 +51,3 @@ steps:
     targetPath: 'create-thin-service-manifest.yaml'
     artifact: 'YAML'
     publishLocation: 'pipeline'
-    

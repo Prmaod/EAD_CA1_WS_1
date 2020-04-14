@@ -34,14 +34,14 @@ spec:
       containers:
       - name: bp
         image: pramacr.azurecr.io/bprestws-thinwar:latest
-        livenessProbe:
-          httpGet:
-            path: /healthy
-            port: 8080
-          initialDelaySeconds: 180
-          timeoutSeconds: 5
-          periodSeconds: 180
-          failureThreshold: 3
+      #  livenessProbe:
+       #   httpGet:
+      #      path: /healthy
+        #    port: 8080
+       #   initialDelaySeconds: 180
+       #   timeoutSeconds: 5
+       #   periodSeconds: 180
+       #   failureThreshold: 3
      #  readinessProbe:
      #    httpGet:
      #      path: /ready

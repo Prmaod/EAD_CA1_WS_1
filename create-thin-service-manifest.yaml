@@ -1,4 +1,4 @@
-apiVersion: extensions/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   # deployment name
@@ -7,7 +7,7 @@ metadata:
     app: bp
 spec:
   # modify replicas according to your case
-  replicas: 1 
+  replicas: 3 
   # pod template
   template:
     metadata:

@@ -7,7 +7,7 @@ metadata:
     app: bp
 spec:
   # modify replicas according to your case
-  replicas: 3 
+  replicas: 1 
   # pod template
   template:
     metadata:
@@ -16,7 +16,7 @@ spec:
     spec:
       # We do daily rollouts, limit the revision history to two weeks of num releases 
       # as we don't expect to roll back beyond that. 
-      revisionHistoryLimit: 14       
+      revisionHistoryLimit: "14"
       # deployment strategy
       strategy:    
         type: RollingUpdate
@@ -24,7 +24,7 @@ spec:
           maxSurge: 1     
           maxUnavailable: 1    
       # the Deployment must wait for 60 seconds after seeing a Pod become healthy before moving on to updating the next Pod
-      minReadySeconds: 60
+      minReadySeconds: "60"
       # sets the progress deadline to 10 minutes
       # If any particular stage in the rollout fails to progress in 10 minutes, then the Deployment is marked as failed, 
       # and all attempts to move the Deployment forward are halted
@@ -36,7 +36,7 @@ spec:
         image: pramacr.azurecr.io/bprestws-thinwar:latest
         resources:
           requests:  #request a Pod with  a minimum of 0.1 of a core and 250 MB of memory
-            cpu: "1000m"
+            cpu: "500m"
             memory: "250Mi"
           limits:    #add a limit of 1.0 CPU and 256 MB of memory
             cpu: "1000m"   

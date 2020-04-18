@@ -42,8 +42,8 @@ spec:
             cpu: "1000m"
             memory: "1000Mi"
           limits:    #add a limit of 1.0 CPU and 256 MB of memory
-            cpu: "1000m"   
-            memory: "1000Mi" 
+            cpu: "1500m"   
+            memory: "1500Mi" 
         livenessProbe:
           httpGet:
             path: /healthy
